@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <title>Healthy Meal Tips</title>
+    <style>
+         * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            padding: 20px;
+            font-family: 'Arial', sans-serif;
+            color: #000000;
+            background-color: #f0f4e3; 
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            text-align: center;
+            padding: 2rem 1rem;
+            background-color: #388e3c;
+            color: white;
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+        }
+
+        .content {
+            display: flex;
+            justify-content: center;
+            flex: 1;
+            margin: auto;
+            padding: 20px 0;
+            gap: 20px;
+            position: relative;
+        }
+
+        .main-content {
+        cursor: pointer;
+        flex: 1;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* Always three columns */
+        gap: 20px;
+        background-color: #fff;
+        border-radius: 12px;
+        padding: 25px;
+        box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+        }
+
+
+        article {
+            transition: all 0.3s ease;
+            background-color: #fff;
+            padding: 15px;
+            box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+            border-radius: 7px;
+            color: #000000;
+        }
+
+        figure {
+            background-color: #fafafa;  /* Light background for contrast */
+            padding: 10px; /* Reduced padding for the figure */
+            border: 1px solid #ddd; /* Border for image container */
+            border-radius: 8px; /* Rounded corners for image container */
+            text-align: center; /* Center the image in the container */
+            margin: 0; /* Reset default margin */
+        }
+
+        figcaption {
+            font-size: 0.9em; /* Caption font size */
+            color: #666; /* Caption text color */
+        }
+        ul {
+        padding-left: 20px; /* Add padding to the left for indentation */
+        margin-top: 10px; /* Add some spacing above the list */
+        list-style-position: inside; /* Optional: Position bullets inside padding */
+        }
+
+        img {
+            max-width: 100%; /* Ensure the image does not exceed the card width */
+            height: 230px; /* Set a consistent height for all images */
+            object-fit: cover; /* Crop images to maintain aspect ratio and fit the height */
+            border-radius: 8px; /* Match the rounded corners of the container */
+        }
+
+        .house{
+        position: absolute;
+        top: 40px;
+        right: 40px;
+        font-size: 24px;
+        color:white;
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out;
+        }
+        .house i:hover {
+            transform: scale(1.3);
+        }
+        .house {
+            z-index: 1000;
+        } 
+
+        /* Footer Section */
+        footer {
+        background-color: #428612;
+        text-align: center;
+        padding: 20px;
+        color: white;
+        }
+        
+        article h2 {
+            color: #388e3c;
+            font-size: 1.3em;
+            margin-bottom: 12px;
+        }
+
+        article p {
+            text-align: left;
+            line-height: 1.2;
+            margin-top: 10px;
+        }
+
+        article:hover {
+            background-color: #dcedc8;
+            transform: translateY(-5px); /* Move the card up slightly */
+            box-shadow: rgba(9, 30, 66, 0.4) 0px 4px 8px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px; /* Enhance shadow effect on hover */
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr; /* One column for small screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="house" onclick="goBack()">
+        <i class="fa-solid fa-house"></i>
+        
+    </div>
+<header>
+        <h1>Healthy Meals</h1><br>
+        <p><b>Discover healthy meal tips that make nutritious eating enjoyable !</b></p>
+    </header>
+    <div class="content">
+     <main class="main-content">
+            <article>
+                <figure>
+                    <img src="/healthymeals_images/Idli.jpg" alt="Grilled Chicken Salad">
+                    <figcaption>Idli</figcaption>
+                </figure>
+                <h2>Idli</h2>
+                <p>“Life is better with a side of chutney and steaming idlis!”</p>
+                <ul>
+                    <li>Calories: 150</li>
+                    <li>Protein: 8.5g</li>
+                    <li>Carbs: 75g</li>
+                    <li>Fats: 5g</li>
+                </ul>
+            </article>
+            <article>
+                <figure>
+                    <img src="healthymeals_images/QuinoaBowl.png" alt="Quinoa Bowl">
+                    <figcaption>Quinoa Bowl</figcaption>
+                </figure>
+                <h2>Quinoa Bowl</h2>
+                <p>Nutritious quinoa topped with black beans, corn, and avocado.</p>
+                <ul>
+                    <li>Calories: 400</li>
+                    <li>Protein: 15g</li>
+                    <li>Carbs: 50g</li>
+                    <li>Fats: 18g</li>
+                </ul>
+            </article>
+            <article>
+                <figure>
+                    <img src="healthymeals_images/BakedSalmon.jpeg" alt="Baked Salmon with Asparagus">
+                    <figcaption>Baked Salmon with Asparagus</figcaption>
+                </figure>
+                <h2>Baked Salmon with Asparagus</h2>
+                <p>Oven-baked salmon served with roasted asparagus and lemon.</p>
+                <ul>
+                    <li>Calories: 450</li>
+                    <li>Protein: 40g</li>
+                    <li>Carbs: 12g</li>
+                    <li>Fats: 28g</li>
+                </ul>
+            </article>
+            <article>
+                <figure>
+                    <img src="healthymeals_images/lentilsoup.jpeg" alt="Lentil Soup">
+                    <figcaption>Lentil Soup</figcaption>
+                </figure>
+                <h2>Lentil Soup</h2>
+                <p>A hearty soup made with lentils, carrots, and spices.</p>
+                <ul>
+                    <li>Calories: 250</li>
+                    <li>Protein: 18g</li>
+                    <li>Carbs: 40g</li>
+                    <li>Fats: 5g</li>
+                </ul>
+            </article>
+            <article>
+                <figure>
+                    <img src="healthymeals_images/greekyogurt.jpeg" alt="Greek Yogurt with Honey and Nuts">
+                    <figcaption>Greek Yogurt with Honey and Nuts</figcaption>
+                </figure>
+                <h2>Greek Yogurt with Honey and Nuts</h2>
+                <p>Delicious Greek yogurt topped with honey and a mix of nuts.</p>
+                <ul>
+                    <li>Calories: 200</li>
+                    <li>Protein: 10g</li>
+                    <li>Carbs: 20g</li>
+                    <li>Fats: 10g</li>
+                </ul>
+            </article>
+            <article>
+                <figure>
+                    <img src="healthymeals_images/avacadotoast.jpeg" alt="Avocado Toast">
+                    <figcaption>Avocado Toast</figcaption>
+                </figure>
+                <h2>Avocado Toast</h2>
+                <p>Whole grain toast topped with smashed avocado and cherry tomatoes.</p>
+                <ul>
+                    <li>Calories: 300</li>
+                    <li>Protein: 8g</li>
+                    <li>Carbs: 30g</li>
+                    <li>Fats: 15g</li>
+                </ul>
+            </article>
+            <article>
+                <figure>
+                    <img src="healthymeals_images/stirfryveg.jpeg" alt="Vegetable Stir-Fry">
+                    <figcaption>Vegetable Stir-Fry</figcaption>
+                </figure>
+                <h2>Vegetable Stir-Fry</h2>
+                <p>A colorful stir-fry of seasonal vegetables served with brown rice.</p>
+                <ul>
+                    <li>Calories: 350</li>
+                    <li>Protein: 10g</li>
+                    <li>Carbs: 60g</li>
+                    <li>Fats: 7g</li>
+                </ul>
+            </article>
+            <article>
+                <figure>
+                    <img src="healthymeals_images/chickpeasalad.jpeg" alt="Chickpea Salad">
+                    <figcaption>Chickpea Salad</figcaption>
+                </figure>
+                <h2>Chickpea Salad</h2>
+                <p>Salad with chickpeas, cucumber, tomatoes, and feta cheese.</p>
+                <ul>
+                    <li>Calories: 320</li>
+                    <li>Protein: 15g</li>
+                    <li>Carbs: 40g</li>
+                    <li>Fats: 12g</li>
+                </ul>
+            </article>
+            <article>
+                <figure>
+                    <img src="healthymeals_images/fruitsmoothie.jpeg" alt="Fruit Smoothie">
+                    <figcaption>Fruit Smoothie</figcaption>
+                </figure>
+                <h2>Fruit Smoothie</h2>
+                <p>A refreshing smoothie made with bananas, berries, and spinach.</p>
+                <ul>
+                    <li>Calories: 200</li>
+                    <li>Protein: 5g</li>
+                    <li>Carbs: 45g</li>
+                    <li>Fats: 1g</li>
+                </ul>
+            </article>
+            <article>
+                <figure>
+                    <img src="healthymeals_images/overnightoats.jpeg" alt="Overnight Oats">
+                    <figcaption>Overnight Oats</figcaption>
+                </figure>
+                <h2>Overnight Oats</h2>
+                <p>Rolled oats soaked overnight with almond milk and topped with fruits.</p>
+                <ul>
+                    <li>Calories: 280</li>
+                    <li>Protein: 10g</li>
+                    <li>Carbs: 40g</li>
+                    <li>Fats: 10g</li>
+                </ul>
+            </article>
+            <!-- Additional Meal Tips -->
+            <article>
+                <figure>
+                    <img src="healthymeals_images/bellpepper.jpeg" alt="Stuffed Bell Peppers">
+                    <figcaption>Stuffed Bell Peppers</figcaption>
+                </figure>
+                <h2>Stuffed Bell Peppers</h2>
+                <p>Bell peppers stuffed with quinoa, black beans, and spices.</p>
+                <ul>
+                    <li>Calories: 300</li>
+                    <li>Protein: 12g</li>
+                    <li>Carbs: 55g</li>
+                    <li>Fats: 7g</li>
+                </ul>
+            </article>
+            <article>
+                <figure>
+                    <img src="healthymeals_images/ZucchiniNoodles.jpg" alt="Zucchini Noodles with Pesto">
+                    <figcaption>Zucchini Noodles with Pesto</figcaption>
+                </figure>
+                <h2>Zucchini Noodles with Pesto</h2>
+                <p>Spiralized zucchini tossed in homemade pesto and cherry tomatoes.</p>
+                <ul>
+                    <li>Calories: 250</li>
+                    <li>Protein: 8g</li>
+                    <li>Carbs: 15g</li>
+                    <li>Fats: 18g</li>
+                </ul>
+            </article>
+            <article>
+                <figure>
+                    <img src="healthymeals_images/scrambledeggs.jpeg" alt="Egg and Avocado Breakfast Bowl">
+                    <figcaption>Egg and Avocado Breakfast Bowl</figcaption>
+                </figure>
+                <h2>Egg and Avocado Breakfast Bowl</h2>
+                <p>Scrambled eggs served with avocado slices and cherry tomatoes.</p>
+                <ul>
+                    <li>Calories: 350</li>
+                    <li>Protein: 20g</li>
+                    <li>Carbs: 20g</li>
+                    <li>Fats: 22g</li>
+                </ul>
+            </article>
+            <article>
+                <figure>
+                    <img src="healthymeals_images/tacos.jpg" alt="Sweet Potato and Black Bean Tacos">
+                    <figcaption>Sweet Potato and Black Bean Tacos</figcaption>
+                </figure>
+                <h2>Sweet Potato and Black Bean Tacos</h2>
+                <p>Tacos filled with roasted sweet potatoes and black beans.</p>
+                <ul>
+                    <li>Calories: 400</li>
+                    <li>Protein: 15g</li>
+                    <li>Carbs: 65g</li>
+                    <li>Fats: 10g</li>
+                </ul>
+            </article>
+            <article>
+                <figure>
+                    <img src="healthymeals_images/chiapudding.jpg" alt="Chia Seed Pudding">
+                    <figcaption>Chia Seed Pudding</figcaption>
+                </figure>
+                <h2>Chia Seed Pudding</h2>
+                <p>A creamy pudding made with chia seeds and almond milk, topped with berries.</p>
+                <ul>
+                    <li>Calories: 250</li>
+                    <li>Protein: 8g</li>
+                    <li>Carbs: 30g</li>
+                    <li>Fats: 12g</li>
+                </ul>
+            </article>
+        </main>
+    </div>
+    <footer>
+        <p>© 2025 Nutrio. All rights reserved.</p>
+      </footer>
+    <script>
+        function goBack() {
+            window.location.href = 'index1.html';
+        }
+    </script>
+</body>
+</html>

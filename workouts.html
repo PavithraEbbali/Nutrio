@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <title>Workouts</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e8f5e9; /* Light green background */
+            color: #333;
+        }
+
+        /* Header Styles */
+        header {
+            text-align: center;
+            padding: 2rem 1rem;
+            background-color: #2e7d32; /* Dark green for the header */
+            color: white;
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+        }
+
+        /* Dropdown Filter */
+        .filter-container {
+            margin: 1rem auto;
+            text-align: center;
+        }
+
+        select {
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+            border: 1px solid #81c784; /* Light green border */
+            border-radius: 5px;
+            background-color: white; /* White background */
+            color: #333;
+        }
+
+         /* Footer Section */
+         footer {
+        background-color: #428612;
+        text-align: center;
+        padding: 20px;
+        color: white;
+        }
+        
+
+        /* Workout Cards Grid */
+        .workout-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        /* Card Styles */
+        .workout-card {
+            background-color: #ffffff; /* White for contrast */
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease;
+        }
+
+        .workout-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .workout-card img {
+            max-width: 100%; /* Ensure the image does not exceed the card width */
+            height: 200px; /* Set a fixed height for uniformity */
+            object-fit: contain; /* Ensure the entire image is visible without distortion */
+            border-radius: 8px; /* Match the rounded corners of the card */
+            background-color: #fafafa; /* Optional: Add light background for better contrast */
+            padding: 10px; /* Add padding for the image container */
+            border: 1px solid #ddd; /* Add border for styling */
+            text-align: center; /* Center-align the image */
+        }
+
+
+        .workout-card-content {
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+        }
+
+        .workout-card-content h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: #2e7d32; /* Match header dark green */
+        }
+
+        .workout-card-content p {
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            line-height: 1.5;
+        }
+
+        .workout-card-content ul {
+            margin-bottom: 1rem; /* Add space after the benefits */
+        }
+
+        .workout-card-content button {
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+            background-color: #2e7d32; /* Dark green button */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: auto; /* Push button to the bottom */
+            align-self: center; /* Center the button horizontally */
+        }
+
+
+        .workout-card-content button:hover {
+            background-color: #1b5e20; /* Even darker green for hover effect */
+        }
+
+    .house {
+        position:absolute;
+        top: 20px; /* Slightly down from the top */
+        right: 20px; /* Right side */
+        font-size: 24px; /* Size of the icon */
+        color: white; /* Color of the icon */
+        cursor: pointer; /* Pointer cursor on hover */
+        transition: transform 0.3s ease-in-out; /* Smooth transition for scale effect */
+        z-index: 1000; /* Ensure it stays above other elements */
+    }
+
+    .house i {
+        transition: transform 0.3s ease-in-out; /* Smooth transition for hover effect */
+    }
+
+    .house:hover i {
+        transform: scale(1.3); /* Scale effect on hover */
+    }
+
+        .color{
+            color:#eeff00;
+        }
+
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="house" onclick="goBack()">
+        <i class="fa-solid fa-house"></i>
+        
+    </div>
+    <header>
+        <h1>Workouts</h1>
+        <p>Your ultimate hub for fitness and workout inspiration</p><br>
+        <p class="color"><b>" Sweat , Record , Repeat "</b></p>
+        
+    </header>
+
+    <div class="filter-container">
+        <select id="categoryFilter">
+            <option value="all">All Workouts</option>
+            <option value="pilates">Pilates</option>
+            <option value="yoga">Yoga</option>
+            <option value="hiit">High-Intensity Interval Training</option>
+            <option value="calisthenics">Calisthenics</option>
+        </select>
+    </div>
+
+    <div class="workout-grid" id="workoutGrid">
+        
+    </div>
+    <footer>
+        <p>© 2025 Nutrio. All rights reserved.</p>
+      </footer>
+
+    <script>
+        const workouts = [
+            {
+                id: 1,
+                category: 'pilates',
+                title: 'Pilates Beginner: Leg Lifts',
+                image: 'workout_images/pilantes-leglift.jpeg',
+                description: `
+                    <ul>
+                        <li><strong>How to Perform:</strong> Lie on your back with arms by your sides and legs straight. Lift one leg to a 90-degree angle while keeping the other flat. Lower back slowly. Perform 10 repetitions per leg.</li>
+                        <li><strong>Benefits:</strong> Improves core strength, control, and lower-body flexibility.</li>
+                    </ul>
+                `,
+            },
+            {
+                id: 2,
+                category: 'pilates',
+                title: 'Pilates Intermediate: Teaser Pose',
+                image: 'workout_images/pilates-teaser.jpg',
+                description: `
+                    <ul>
+                        <li><strong>How to Perform:</strong> Lie on your back with arms overhead. Lift your legs and upper body into a V-shape while keeping arms parallel to your legs. Hold for 5 seconds. Perform 5–8 repetitions.</li>
+                        <li><strong>Benefits:</strong> Strengthens the core, improves balance, and enhances coordination.</li>
+                    </ul>
+                `,
+            },
+            {
+                id: 3,
+                category: 'yoga',
+                title: 'Yoga Beginner: Cat-Cow Pose',
+                image: 'workout_images/yogacat-cow.jpg',
+                description: `
+                    <ul>
+                        <li><strong>How to Perform:</strong> Inhale to arch your back (Cow Pose), exhale to round it (Cat Pose). Repeat for 8–10 cycles.</li>
+                        <li><strong>Benefits:</strong> Improves spinal flexibility, relieves tension, and promotes relaxation.</li>
+                    </ul>
+                `,
+            },
+            {
+                id: 4,
+                category: 'yoga',
+                title: 'Yoga Intermediate: Tree Pose',
+                image: 'workout_images/yogatree.jpg',
+                description: `
+                    <ul>
+                        <li><strong>How to Perform:</strong> Balance on one foot, placing the other on your thigh or calf. Hold for 20–30 seconds.</li>
+                        <li><strong>Benefits:</strong> Enhances balance, strengthens leg muscles, and increases focus.</li>
+                    </ul>
+                `,
+            },
+            {
+                id: 5,
+                category: 'hiit',
+                title: 'HIIT Beginner: Jumping Jacks',
+                image: 'workout_images/hiitjump.jpg',
+                description: `
+                    <ul>
+                        <li><strong>How to Perform:</strong> Jump feet out while raising arms overhead. Return and repeat for 30 seconds. Rest for 15 seconds and repeat 3 times.</li>
+                        <li><strong>Benefits:</strong> Boosts cardiovascular fitness and warms up the body.</li>
+                    </ul>
+                `,
+            },
+            {
+                id: 6,
+                category: 'hiit',
+                title: 'HIIT Intermediate: Jump Squats',
+                image: 'workout_images/hiitsquats.jpg',
+                description: `
+                    <ul>
+                        <li><strong>How to Perform:</strong> Lower into a squat and jump explosively upward. Land softly and go straight into the next squat. Repeat for 30 seconds.</li>
+                        <li><strong>Benefits:</strong> Builds explosive power, strengthens the lower body, and burns calories.</li>
+                    </ul>
+                `,
+            },
+            {
+                id: 7,
+                category: 'calisthenics',
+                title: 'Calisthenics Beginner: Push-Ups',
+                image: 'workout_images/pushups.jpg',
+                description: `
+                    <ul>
+                        <li><strong>How to Perform:</strong> Get into a plank position with your hands under your shoulders. Lower your body until your chest nearly touches the floor, then push back up. Perform 10 repetitions.</li>
+                        <li><strong>Benefits:</strong> Builds upper body strength and core stability.</li>
+                    </ul>
+                `,
+            },
+            {
+                id: 8,
+                category: 'calisthenics',
+                title: 'Calisthenics Intermediate: Pistol Squats',
+                image: 'workout_images/pistolsquat.jpeg',
+                description: `
+                    <ul>
+                        <li><strong>How to Perform:</strong> Stand on one leg and lower into a squat position while extending the other leg forward. Return to standing. Perform 5 repetitions per leg.</li>
+                        <li><strong>Benefits:</strong> Enhances balance, strengthens leg muscles, and increases mobility.</li>
+                    </ul>
+                `,
+            },
+        ];
+
+        const workoutGrid = document.getElementById('workoutGrid');
+        const categoryFilter = document.getElementById('categoryFilter');
+
+        function renderCards(filter) {
+            workoutGrid.innerHTML = '';
+            const filteredWorkouts = filter === 'all' ? workouts : workouts.filter(w => w.category === filter);
+            filteredWorkouts.forEach(workout => {
+                const card = `
+                    <div class="workout-card">
+                        <img src="${workout.image}" alt="${workout.title}">
+                        <div class="workout-card-content">
+                            <h3>${workout.title}</h3>
+                            <p>${workout.description}</p>
+                           
+                        </div>
+                    </div>
+                `;
+                workoutGrid.innerHTML += card;
+            });
+        }
+
+        categoryFilter.addEventListener('change', (e) => {
+            renderCards(e.target.value);
+        });
+
+        // Initial render
+        renderCards('all');
+       
+        function goBack() {
+            window.location.href = 'index1.html';
+        }
+    </script>
+   
+</body>
+</html>

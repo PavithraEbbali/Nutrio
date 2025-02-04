@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <title>Weight Loss Advice</title>
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+         /* Footer Section */
+         footer {
+        background-color: #428612;
+        text-align: center;
+        padding: 20px;
+        color: white;
+        }
+
+        header {
+            text-align: center;
+            padding: 2rem 1rem;
+            background-color: #28a745;
+            color: white;
+            position: relative;
+        }
+        header h1 {
+            font-size: 2.5rem;
+        }
+        main {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: auto;
+        }
+        .section-title {
+            margin-bottom: 1rem;
+            font-size: 2rem;
+            color: #28a745;
+            text-align: center;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        .box {
+            flex: 1;
+            min-width: 300px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 1rem;
+        }
+        .box h2 {
+            font-size: 1.5rem;
+            color: #28a745;
+            margin-bottom: 1rem;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        th, td {
+            padding: 0.8rem;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #28a745;
+            color: white;
+        }
+        .personalization {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: #e9f5ff;
+            border: 1px solid #28a745;
+            border-radius: 10px;
+        }
+        .personalization h2 {
+            color: #28a745;
+        }
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 0.8rem;
+            font-size: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.2rem;
+            font-size: 1rem;
+            background: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background: #218838;
+        }
+        
+    .house {
+        position: absolute;
+        top: 20px; /* Slightly down from the top */
+        right: 20px; /* Right side */
+        font-size: 24px; /* Size of the icon */
+        color: white; /* Color of the icon */
+        cursor: pointer; /* Pointer cursor on hover */
+        transition: transform 0.3s ease-in-out; /* Smooth transition for scale effect */
+        z-index: 1000; /* Ensure it stays above other elements */
+    }
+
+    .house i {
+        transition: transform 0.3s ease-in-out; /* Smooth transition for hover effect */
+    }
+
+    .house:hover i {
+        transform: scale(1.3); /* Scale effect on hover */
+    }
+    </style>
+</head>
+<body>
+    <div class="house" onclick="goBack()">
+        <i class="fa-solid fa-house"></i>
+        
+    </div>
+    <header>
+        <h1>Weight Loss Advice</h1>
+        <p>Your personalized guide to a healthier you</p>
+    </header>
+
+    <main>
+        <!-- Healthy Meals Section -->
+        <section>
+            <h2 class="section-title">Healthy Meals for Weight Loss</h2>
+            <div class="container">
+                <div class="box">
+                    <h2>Vegetarian Diet</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Time</th>
+                                <th>Meal</th>
+                                <th>Calories</th>
+                                <th>Nutrients</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Morning</td>
+                                <td>Oatmeal with berries</td>
+                                <td>250</td>
+                                <td>6g Protein, 30g Carbs</td>
+                            </tr>
+                            <tr>
+                                <td>Afternoon</td>
+                                <td>Quinoa salad</td>
+                                <td>350</td>
+                                <td>10g Protein, 40g Carbs</td>
+                            </tr>
+                            <tr>
+                                <td>Evening</td>
+                                <td>Vegetable stir-fry</td>
+                                <td>300</td>
+                                <td>8g Protein, 50g Carbs</td>
+                            </tr>
+                            <tr>
+                                <td>Night</td>
+                                <td>Lentil soup</td>
+                                <td>200</td>
+                                <td>10g Protein, 25g Carbs</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="box">
+                    <h2>Non-Vegetarian Diet</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Time</th>
+                                <th>Meal</th>
+                                <th>Calories</th>
+                                <th>Nutrients</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Morning</td>
+                                <td>Scrambled eggs with avocado</td>
+                                <td>200</td>
+                                <td>12g Protein, 5g Carbs</td>
+                            </tr>
+                            <tr>
+                                <td>Afternoon</td>
+                                <td>Grilled chicken salad</td>
+                                <td>400</td>
+                                <td>30g Protein, 10g Carbs</td>
+                            </tr>
+                            <tr>
+                                <td>Evening</td>
+                                <td>Baked salmon</td>
+                                <td>450</td>
+                                <td>40g Protein, 5g Carbs</td>
+                            </tr>
+                            <tr>
+                                <td>Night</td>
+                                <td>Cottage cheese with fruits</td>
+                                <td>150</td>
+                                <td>10g Protein, 15g Carbs</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Special Advised Meals Section -->
+        <section>
+            <h2 class="section-title">Special Advised Meals</h2>
+            <div class="container">
+                <div class="box">
+                    <h2>For Diabetes Patients</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Time</th>
+                                <th>Meal</th>
+                                <th>Calories</th>
+                                <th>Nutrients</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Morning</td>
+                                <td>Greek yogurt with nuts</td>
+                                <td>150</td>
+                                <td>10g Protein, 8g Carbs</td>
+                            </tr>
+                            <tr>
+                                <td>Afternoon</td>
+                                <td>Grilled chicken & vegetables</td>
+                                <td>350</td>
+                                <td>30g Protein, 15g Carbs</td>
+                            </tr>
+                            <tr>
+                                <td>Evening</td>
+                                <td>Vegetable curry with quinoa</td>
+                                <td>300</td>
+                                <td>12g Protein, 40g Carbs</td>
+                            </tr>
+                            <tr>
+                                <td>Night</td>
+                                <td>Lentil soup</td>
+                                <td>200</td>
+                                <td>10g Protein, 20g Carbs</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="box">
+                    <h2>For Blood Pressure Patients</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Time</th>
+                                <th>Meal</th>
+                                <th>Calories</th>
+                                <th>Nutrients</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Morning</td>
+                                <td>Banana with almond butter</td>
+                                <td>250</td>
+                                <td>5g Protein, 30g Carbs</td>
+                            </tr>
+                            <tr>
+                                <td>Afternoon</td>
+                                <td>Spinach salad with nuts</td>
+                                <td>300</td>
+                                <td>10g Protein, 15g Carbs</td>
+                            </tr>
+                            <tr>
+                                <td>Evening</td>
+                                <td>Grilled salmon with broccoli</td>
+                                <td>400</td>
+                                <td>35g Protein, 10g Carbs</td>
+                            </tr>
+                            <tr>
+                                <td>Night</td>
+                                <td>Fruit smoothie</td>
+                                <td>200</td>
+                                <td>5g Protein, 25g Carbs</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Personalization Section -->
+        <section class="personalization">
+            <h2>Personalize Your Meal Plan</h2>
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="number" id="age" placeholder="Enter your age">
+            </div>
+            <div class="form-group">
+                <label for="gender">Gender:</label>
+                <select id="gender">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="weight">Weight (kg):</label>
+                <input type="number" id="weight" placeholder="Enter your weight">
+            </div>
+            <div class="form-group">
+                <label for="condition">Health Condition:</label>
+                <select id="condition">
+                    <option value="none">None</option>
+                    <option value="diabetes">Diabetes</option>
+                    <option value="blood_pressure">High Blood Pressure</option>
+                </select>
+            </div>
+            <button class="btn">Generate Meal Plan</button>
+        </section>
+        
+    </main>
+    <footer>
+        <p>© 2025 Nutrio. All rights reserved.</p>
+      </footer>
+    <script>
+    function goBack() {
+        window.location.href = 'index1.html';
+    }
+</script>
+</body>
+</html>

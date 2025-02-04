@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="profile.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="form-container">
+        <div class="form-content">
+            <h1>Tell Us About Yourself</h1>
+            <form id="profileForm" action="/profile" method="POST">
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" name="fullName" value="<%= name %>" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" value="<%= email %>" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="age">Age</label>
+                    <input type="number" id="age" name="age" placeholder="Enter your age">
+                </div>
+                <div class="form-group">
+                    <label for="gender">Gender</label>
+                    <select id="gender" name="gender">
+                        <option value="" disabled selected>Select</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="dob">Date of Birth</label>
+                    <input type="date" id="dob" name="dob" max="2024-12-31">
+                </div>
+                <div class="form-group">
+                    <label for="weight">Weight (kg)</label>
+                    <input type="number" id="weight" name="weight" placeholder="Enter your weight" step="any">
+                </div>
+                <div class="form-group">
+                    <label for="height">Height (feet)</label>
+                    <input type="number" id="height" name="height" placeholder="Enter your height" step="any">
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn">Save Profile</button>
+                </div>
+
+                <!-- Error message -->
+                <% if (errorMessage) { %>
+                    <p id="error-message" class="error-message" style="color: red;">
+                        <%= errorMessage %>
+                    </p>
+                <% } else { %>
+                    <p id="error-message" class="error-message" style="display: none;"></p>
+                <% } %>
+
+                <!-- Success message -->
+                <% if (successMessage) { %>
+                    <div id="success-message" class="success-message">
+                        <span class="checkmark">✔</span> <%= successMessage %>
+                    </div>
+                    <script>
+                        // Redirect to homepage after showing the success message
+                        setTimeout(function() {
+                            window.location.href = '/index1.html'; // Redirect to the homepage after 3 seconds
+                        }, 3000);  // 3000ms delay for redirection
+                    </script>
+                <% } %>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $('#profileForm').submit(function(e) {
+                // Prevent form submission to check validation
+                e.preventDefault();
+
+                // Check if all required fields are filled
+                const age = $('#age').val();
+                const gender = $('#gender').val();
+                const dob = $('#dob').val();
+                const weight = $('#weight').val();
+                const height = $('#height').val();
+
+                if (!age || !gender || !dob || !weight || !height) {
+                    $('#error-message').show(); // Show error message if any field is empty
+                    $('#success-message').hide(); // Hide success message
+                } else {
+                    $('#error-message').hide(); // Hide error message if all fields are filled
+                    // Submit the form
+                    this.submit();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
