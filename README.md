@@ -6,18 +6,18 @@ and customized exercise tips into an easy-to-navigate interface, it empowers use
 and make healthy living both accessible and practical.
 
 ## Key Features:
-✅ Personalized Meal Plans – Tailored recommendations based on dietary preferences and health goals.
-✅ Nutritional Insights – Get food recommendations backed by expert guidance and scientific data.
-✅ Exercise Suggestions – Explore tailored workout plans to complement nutrition.
-✅ Calorie Counter – Track your daily calorie intake seamlessly.
-✅ User Profiles – Enable users to create and update profiles with key information like height, weight, and age for personalized tracking.
-✅ Smart Interactive Search – Look up health topics like “weight loss” and get directed to dedicated pages with structured diet plans.
+- Personalized Meal Plans – Tailored recommendations based on dietary preferences and health goals.
+- Nutritional Insights – Get food recommendations backed by expert guidance and scientific data.
+- Exercise Suggestions – Explore tailored workout plans to complement nutrition.
+- Calorie Counter – Track your daily calorie intake seamlessly.
+- User Profiles – Enable users to create and update profiles with key information like height, weight, and age for personalized tracking.
+- Smart Interactive Search – Look up health topics like “weight loss” and get directed to dedicated pages with structured diet plans.
 
 ## Tech Stack Overview:
-💠 Frontend: HTML, CSS, JavaScript , EJS (for structuring, styling, scripting and rendering dynamic content on the client side)
-💠 Backend: Node.js, Express.js (A robust runtime environment and framework for handling authentication, routing, middleware and efficient data flow)
-💠 Database: MongoDB (for storing user profiles and login data)
-💠 Security: Bcrypt for password encryption
+- Frontend: HTML, CSS, JavaScript , EJS 
+- Backend: Node.js, Express.js 
+- Database: MongoDB 
+- Bcrypt for password encryption
 
 ## Setup Instructions
 
