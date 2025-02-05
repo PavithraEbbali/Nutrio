@@ -39,7 +39,7 @@ To configure a Nodemailer transporter in a Node.js application to send emails.
     service: 'Gmail', // Or another email service
     auth: {
       user: 'your_email@gmail.com', // Your email
-      pass: 'your_email_password', // Your email password or app password
+      pass: 'your_email_password', // Your email app password
     },
   });
 
