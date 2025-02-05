@@ -1,10 +1,9 @@
 # Nutrio - A Comprehensive Platform for Nutrition and Fitness
 
-This project proposes a web application that serves as a comprehensive platform for health and wellness. 
-It addresses the growing need for reliable, personalized health and fitness information by offering a holistic, 
-centralized hub that combines nutritious food options, healthy meal recommendations, and customized exercise tips in one accessible location.
-By integrating essential resources into an easy-to-navigate interface, the platform empowers users to improve their health and well-being, 
-making healthy living both accessible and practical for everyone
+This web application serves as a comprehensive health and wellness platform, addressing the growing need for reliable,
+personalized fitness and nutrition information. By integrating nutritious food options, healthy meal recommendations
+and customized exercise tips into an easy-to-navigate interface, it empowers users to improve their well-being 
+and make healthy living both accessible and practical.
 
 ## Setup Instructions
 
