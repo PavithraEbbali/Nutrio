@@ -29,6 +29,22 @@ Make sure you have the following installed:
    npm install express mongoose body-parser bcrypt express-session ejs
    ```
 
+3. In server.js file , setting up the Nodemailer transporter
+
+To configure a Nodemailer transporter in a Node.js application to send emails.
+
+```
+// Send password reset email
+  const transporter = nodemailer.createTransport({
+    service: 'Gmail', // Or another email service
+    auth: {
+      user: 'your_email@gmail.com', // Your email
+      pass: 'your_email_password', // Your email password or app password
+    },
+  });
+
+```
+
  ### Running the Application
 
 To start the development server, run:
